@@ -4,7 +4,7 @@ const isProtected = createRouteMatcher(["/", "/profile(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
   if (isProtected(req)) auth().protect();
-  publicRoutes: ["/api/webhooks/clerk"];
+  publicRoutes: ["/", "/api/webhooks/clerk", "/api/webhooks/stripe"];
 });
 
 export const config = {
